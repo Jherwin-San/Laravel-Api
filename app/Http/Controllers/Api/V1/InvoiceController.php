@@ -67,6 +67,10 @@ class InvoiceController extends Controller
         });
 
         Invoice::insert($bulk->toArray());
+        return response()->json([
+            'message' => "Added successfully.",
+            'items' => $bulk->toArray()
+        ]);
     }
 
     /**
